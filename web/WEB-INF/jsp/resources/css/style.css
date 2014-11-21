@@ -1,0 +1,292 @@
+/* 
+    Document   : style
+    Created on : 14 Jan, 2014, 12:59:09 AM
+    Author     : Mayank
+    Description:
+        Purpose of the stylesheet follows.
+*/
+ 
+            body{
+                
+                background-color: whitesmoke;
+                height:100%;
+            }
+            .container{
+                
+                width:100%;
+                min-width:1024px !important;
+               
+            }
+            .navbar-brand{
+                
+                color:white !important;
+            }
+            
+            .navbar-brand:hover{
+                
+                color:whitesmoke !important;
+            }
+            .navbar-text{
+                
+                color:white !important;
+            }
+            .navbar-link{
+                color:white !important;
+            }
+            .modal{
+                
+                overflow-y:auto;
+            }
+            .largeText{
+                
+                font-size:1.4em;
+            }
+            #mybook div{
+                
+                
+            }
+            .innerPage{
+                
+                width:100%;
+                max-height:643px;
+                padding:10px;
+                overflow-x:hidden;
+                overflow-y: auto;
+               
+            }
+            
+            .questions{
+                
+                margin-bottom:45px;
+                color: #428bca;
+            }
+            .questions:hover{
+                color: #3071a9;
+            }
+            .caption{
+                
+                text-align: center;
+            }
+            .caption small{
+                
+                color: #31708f;
+            }
+            .caption small:hover{
+                color: #245269;
+            }
+            .center{
+                
+                text-align:center;
+            }
+            .videoLabel{
+                
+                margin-bottom:10px;
+                
+                
+            }
+            .albumLabel{
+                
+                margin-bottom:5px; 
+            }
+            .thumbnail{
+                
+                    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+                    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+                    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+                    position:relative;
+            }
+            .thumbnail:hover{
+                
+                border-color:#0099e1;
+               
+                
+            }
+            .thumbnail img{
+                
+                height:155px;
+            }
+            .thumbnail img:hover{
+                
+                cursor: pointer;
+            }
+            
+            .slideXXL{
+                
+                width:90%;
+                margin-left: 5%;
+            }
+            .slideXL{
+                
+                 width:70%;
+                 margin-left: 15%;
+                
+            }
+            
+            .slideL{
+                
+                 width:60%;
+                 margin-left: 20%;
+                
+            }
+            
+            .slideM{
+                
+                 width:50%;
+                 margin-left: 25%;
+                
+            }
+            .slideS{
+                
+                 width:40%;
+                 margin-left: 30%;
+                
+            }
+            .slidingDiv{
+                
+                width:100%;
+                height:100%;
+                position:fixed;
+                z-index:10000;
+                background:rgba(0,0,0,0.5);
+                
+                top:0px;
+                padding-top:0%;
+                display: none;
+               // padding-top:1%;
+           }
+            .slidingDivInner .panel-body{
+                
+               
+                max-height:550px;
+               overflow-y: auto;
+                overflow-x:hidden;
+                
+            }
+            
+            .albumImageCountDiv{
+                
+                position:absolute;
+                top:60%;
+                width:95%;
+                margin-left: 1%;
+                color:white;
+               
+                z-index:1000;
+               background:rgba(0,0,0,0.5);
+                text-align: center;
+            }
+            .imageCommentsDiv .panel-body {
+                
+                max-height:610px;
+                overflow-y: hidden;
+                overflow-x:hidden;
+                
+            }
+            
+            .imageCommentsDiv .panel-body .col-xs-4{
+                
+                max-height:700px;position: relative;overflow-x:hidden;overflow-y: hidden;
+            }
+            .imageCommentsDiv .panel-body .commentsInnerDiv{
+                
+                max-height:500px;position: relative;overflow-x:hidden;overflow-y: auto;
+            }
+            .slidingDivInner{
+                
+                height:100%;
+                
+                
+               
+            }
+            .slidingDivTop{
+                
+                width:100%;
+                height:100%;
+                position:absolute;
+                z-index:10000;
+                background:rgba(0,0,0,0.5);
+                position:absolute;
+                top:0px;
+                display: none;
+                padding-top:60px;
+               
+                
+                
+            }
+            .b-page{
+                
+                overflow-x: hidden !important;
+                overflow-y: auto !important;
+            }
+            .b-page-cover{
+                
+                 background:white !important;
+                
+            }
+            .albumImagesNumberCaption{
+                
+                position:absolute;
+                width:97%;
+                height:8%;
+                top:0px;
+                background: rgba(0,0,0,0.3);
+                color:white;
+                text-align:center;
+            }
+            .ImagesNameCaption{
+                
+                position:absolute;
+                width:96%;
+                height:10%;
+                bottom:0px;
+                background: rgba(0,0,0,0.3);
+                color:white;
+                text-align:center;
+                font-size:1.3em;
+            }
+            .closeSlidingDiv {
+                
+                cursor: pointer;
+            }
+            
+            
+     /*editProfileDiv*/
+     
+     .inputgrp{
+         
+         margin-bottom:1%;
+         border-bottom: 1px solid #CCC;
+         padding-bottom:1%;
+     }
+     
+     /*editProfileDiv*/
+
+/* Image Gallery CSS */            
+            
+            
+            
+/* Image Gallery CSS */            
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #CCC; 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background:#CCC; 
+}
+
