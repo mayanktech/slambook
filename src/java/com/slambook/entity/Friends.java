@@ -5,10 +5,15 @@
 package com.slambook.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 /**
@@ -17,6 +22,16 @@ import javax.persistence.Transient;
  */
 
 @Entity
+@NamedQueries({
+/*    
+@NamedQuery(name="Friends.getUserFriends",query="SELECT answers.senderId from SlamBookAnswers answers WHERE answers.userInfo.userId = :userId AND answers.allow = :allow"),
+@NamedQuery(name="Friends.acceptRequest",query="from SlamBookAnswers answers WHERE answers.userInfo.userId = :userId AND answers.allow = :allow AND answers.senderId = :senderId"),
+@NamedQuery(name="Friends.cancelRequest",query="DELETE from SlamBookAnswers answers WHERE answers.userInfo.userId = :userId AND answers.senderId = :senderId"),
+@NamedQuery(name="Friends.acceptRequest1",query="UPDATE SlamBookAnswers answers SET answers.allow = true WHERE answers.userInfo.userId = :userId AND answers.senderId = :senderId"),
+@NamedQuery(name="Friends.isAlreadyAFriend",query="from SlamBookAnswers answers WHERE answers.userInfo.userId = :userId AND answers.senderId = :senderId"),
+@NamedQuery(name="Friends.getIdsOfUserFriends",query="SELECT answers.senderId from SlamBookAnswers answers WHERE answers.userInfo.userId = :userId AND answers.allow = :allow"),
+*/
+})
 public class Friends implements Serializable {
     
     @Id
@@ -24,7 +39,7 @@ public class Friends implements Serializable {
     
     private String friendRandomString;
    
-    private String friendId;
+    private long friendId;
     
     @ManyToOne
     @JoinColumn(name="userId")
@@ -34,6 +49,32 @@ public class Friends implements Serializable {
     @JoinColumn(name="slambookId")
     private Slambook  slambook;
     
+    
+    private boolean allow;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date requestSentOn;
+     
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date requestAcceptedOn;
+
+    public Date getRequestSentOn() {
+        return requestSentOn;
+    }
+
+    public void setRequestSentOn(Date requestSentOn) {
+        this.requestSentOn = requestSentOn;
+    }
+
+    public Date getRequestAcceptedOn() {
+        return requestAcceptedOn;
+    }
+
+    public void setRequestAcceptedOn(Date requestAcceptedOn) {
+        this.requestAcceptedOn = requestAcceptedOn;
+    }
+    
+    @Transient
     private String connectionStatus;
     
     @Transient
@@ -104,11 +145,11 @@ public class Friends implements Serializable {
         this.connectionId = connectionId;
     }
 
-    public String getFriendId() {
+    public long getFriendId() {
         return friendId;
     }
 
-    public void setFriendId(String friendId) {
+    public void setFriendId(long friendId) {
         this.friendId = friendId;
     }
 
@@ -150,6 +191,14 @@ public class Friends implements Serializable {
 
     public void setFriendRandomString(String friendRandomString) {
         this.friendRandomString = friendRandomString;
+    }
+
+    public boolean isAllow() {
+        return allow;
+    }
+
+    public void setAllow(boolean allow) {
+        this.allow = allow;
     }
 
    

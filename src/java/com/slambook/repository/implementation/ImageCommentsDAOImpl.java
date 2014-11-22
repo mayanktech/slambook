@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
  * @author Mayank
  */
 @Repository
-public class ImageCommentsDAOImplementation implements ImageCommentDAOInt {
+public class ImageCommentsDAOImpl implements ImageCommentDAOInt {
 
     @Autowired
     private SessionFactory sessionFactory;

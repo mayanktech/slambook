@@ -5,6 +5,7 @@
 package com.slambook.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +13,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -41,6 +44,9 @@ public class Album implements Serializable {
     String albumSummary;
     String albumDate;
     
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdOn;
+    
     @ManyToOne
     @JoinColumn(name="userId")
     private UserInfo userInfo;
@@ -48,12 +54,24 @@ public class Album implements Serializable {
     @OneToMany(mappedBy="album")
     private List<com.slambook.entity.Images> imagesList;
     
+    @OneToMany(mappedBy="album")
+    private List<com.slambook.entity.AlbumComments> albumCommentsList;
+    
+    @OneToMany(mappedBy="album")
+    private List<com.slambook.entity.AlbumLikes> albumLikesList;
+    
     @Transient
     String coverImageId;
     
     
     @Transient
     int albumImageCount;
+    
+    @Transient
+    private int albumLikesCount;
+    
+    @Transient
+    private int albumCommentsCount;
     
     
     public String getCoverImageId() {
@@ -126,6 +144,46 @@ public class Album implements Serializable {
 
     public void setAlbumRandomString(String albumRandomString) {
         this.albumRandomString = albumRandomString;
+    }
+
+    public int getAlbumLikesCount() {
+        return albumLikesCount;
+    }
+
+    public void setAlbumLikesCount(int albumLikesCount) {
+        this.albumLikesCount = albumLikesCount;
+    }
+
+    public int getAlbumCommentsCount() {
+        return albumCommentsCount;
+    }
+
+    public void setAlbumCommentsCount(int albumCommentsCount) {
+        this.albumCommentsCount = albumCommentsCount;
+    }
+
+    public Date getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreated(Date created) {
+        this.createdOn = created;
+    }
+
+    public List<com.slambook.entity.AlbumComments> getAlbumCommentsList() {
+        return albumCommentsList;
+    }
+
+    public void setAlbumCommentsList(List<com.slambook.entity.AlbumComments> albumCommentsList) {
+        this.albumCommentsList = albumCommentsList;
+    }
+
+    public List<com.slambook.entity.AlbumLikes> getAlbumLikesList() {
+        return albumLikesList;
+    }
+
+    public void setAlbumLikesList(List<com.slambook.entity.AlbumLikes> albumLikesList) {
+        this.albumLikesList = albumLikesList;
     }
 
     

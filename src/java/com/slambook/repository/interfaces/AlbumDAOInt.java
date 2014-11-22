@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.slambook.repository.interfaces;
+package com.slambook.repository.longerfaces;
 
 import com.slambook.entity.Album;
 import java.util.ArrayList;
@@ -13,12 +13,12 @@ import java.util.ArrayList;
  */
 public interface AlbumDAOInt {
     
-     public int addAlbum(Album album);
+     public long addAlbum(Album album);
      public void updateAlbum(Album album);
-     public int getAlbumCoverImage(int albumId);
-     public int getAlbumImageCount(int albumId);
-     public void deleteAlbum(int albumId);
-     public ArrayList getAlbums(int userId,int clickTimes);
-     public ArrayList getAllAlbums(int userId);
-     public String getAlbumName(int albumId);
+     public long getAlbumCoverImage(long albumId);
+     public int getAlbumImageCount(long albumId);
+     public void deleteAlbum(long albumId);
+     public ArrayList getAlbums(long userId,int clickTimes);
+     public ArrayList getAllAlbums(long userId);
+     public String getAlbumName(long albumId);
 }

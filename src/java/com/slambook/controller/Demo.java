@@ -57,7 +57,7 @@ public class Demo {
 
 		
                 
-		return "user/AddAnswers";
+		return "user/EditSlambookQuestions";
 	}
      
      @RequestMapping("/albums/friend/FriendsAlbum")

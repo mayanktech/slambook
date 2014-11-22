@@ -5,6 +5,7 @@
 package com.slambook.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,6 +17,8 @@ import javax.persistence.NamedNativeQuery;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.web.multipart.MultipartFile;
@@ -46,6 +49,9 @@ public class Images implements Serializable {
     @JoinColumn(name="albumId")
     private Album album;
     
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdOn;
+    
     @Transient
     private int imageLikesCount;
    
@@ -54,6 +60,14 @@ public class Images implements Serializable {
     
     @Transient
     private int imageCommentCount;
+
+    public Date getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(Date createdOn) {
+        this.createdOn = createdOn;
+    }
     
     
     String imageDescription;

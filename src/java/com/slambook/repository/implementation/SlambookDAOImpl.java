@@ -30,13 +30,16 @@ public class SlambookDAOImpl implements SlambookDAOInt{
     
  
     @Override
-    public long addSlambook(String slambookName, UserInfo userInfo) {
+    public long addSlambook(String slambookName, UserInfo userInfo,ArrayList<com.slambook.entity.Questions> questionsList) {
         
         Slambook slambook = new Slambook();
         slambook.setUserInfo(userInfo);
         slambook.setSlambookName("My slambook");
         slambook.setSlambookCreationDate(new Date());
         
+        
+        
+        if(questionsList == null){
         ArrayList<com.slambook.entity.Questions> defaultQuestionsList = new ArrayList<>();
         Questions question1 = new Questions("qwe1",slambook);
         Questions question2 = new Questions("qwe1",slambook);
@@ -67,8 +70,11 @@ public class SlambookDAOImpl implements SlambookDAOInt{
         defaultQuestionsList.add(question12);
         defaultQuestionsList.add(question13);
         defaultQuestionsList.add(question14);
-        
         slambook.setSlambookQuestions(defaultQuestionsList);
+        }
+        else{
+        slambook.setSlambookQuestions(questionsList);
+        }
         
         sessionFactory.getCurrentSession().save(slambook);
         

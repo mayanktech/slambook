@@ -5,6 +5,7 @@
 package com.slambook.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +14,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -24,10 +27,10 @@ import org.hibernate.annotations.GenericGenerator;
 @Entity
 @NamedQueries({
 
-    @NamedQuery(name="ImageLikes.removeLike",query="DELETE FROM ImageLikes likes WHERE likes.images.imageId = :imageId AND likes.userInfo.userId = :userId")
-   /*  @NamedQuery(name="ImageLikes.getImageLikes",query="FROM ImageLikes likes WHERE likes.images.imageId = :imageId"),
+    /*@NamedQuery(name="ImageLikes.removeLike",query="DELETE FROM ImageLikes likes WHERE likes.images.imageId = :imageId AND likes.userInfo.userId = :userId"),
+     @NamedQuery(name="ImageLikes.getImageLikes",query="FROM ImageLikes likes WHERE likes.images.imageId = :imageId"),
      @NamedQuery(name="ImageLikes.getImageLikesCount",query="SELECT COUNT(likes.imageLikeId) FROM ImageLikes likes WHERE likes.images.imageId = :imageId"),
-     @NamedQuery(name="ImageLikes.isAlreadyLiked",query="FROM ImageLikes likes WHERE likes.images.imageId = :imageId AND likes.userId = :userId")   */
+     @NamedQuery(name="ImageLikes.isAlreadyLiked",query="FROM ImageLikes likes WHERE likes.images.imageId = :imageId AND likes.userInfo.userId = :userId")   */
 })
 public class ImageLikes implements Serializable {
     
@@ -48,6 +51,9 @@ public class ImageLikes implements Serializable {
     @ManyToOne
     @JoinColumn(name = "userId")
     private UserInfo userInfo;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date createdOn;
     
     @Transient
     private String albumId;
@@ -119,6 +125,14 @@ public class ImageLikes implements Serializable {
 
     public void setUserInfo(UserInfo userInfo) {
         this.userInfo = userInfo;
+    }
+
+    public Date getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(Date createdOn) {
+        this.createdOn = createdOn;
     }
     
     

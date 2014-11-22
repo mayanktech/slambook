@@ -1,31 +1,30 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package com.slambook.entity;
 
-import java.io.Serializable;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 /**
  *
- * @author Mayank
+ * @author mayank
  */
-@Entity
 /*@NamedQueries({
 
-    @NamedQuery(name="ImageComments.getImageComments",query="FROM ImageComments userImageComments WHERE userImageComments.images.imageId = :imageId"),
-    @NamedQuery(name="ImageComments.getImageCommentsCount",query="SELECT COUNT(userImageComments.commentId) FROM ImageComments userImageComments WHERE userImageComments.images.imageId = :imageId")
+    @NamedQuery(name="AlbumComments.getAlbumComments",query="FROM AlbumComments userAlbumComments WHERE userAlbumComments.images.imageId = :imageId"),
+    @NamedQuery(name="AlbumComments.getAlbumCommentsCount",query="SELECT COUNT(userAlbumComments.commentId) FROM AlbumComments userAlbumComments WHERE userAlbumComments.images.imageId = :imageId")
     
 })*/
-public class ImageComments implements Serializable {
+@Entity
+public class AlbumComments {
     
     @Id
     private long commentId;
@@ -33,15 +32,15 @@ public class ImageComments implements Serializable {
     private String commenterId;
     
     @ManyToOne
-    @JoinColumn(name="imageId")
-    private Images images;
+    @JoinColumn(name="albumId")
+    private Album album;
     
     @Transient
     private String currentProfilePicId;
     
     private String commentText;
     
-    @Temporal(TemporalType.TIMESTAMP)
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     private Date createdOn;
     
     @Transient
@@ -53,9 +52,6 @@ public class ImageComments implements Serializable {
     
     @Transient
     private String albumId;
-    
-    @Transient
-    private String imageId;
 
     public long getCommentId() {
         return commentId;
@@ -65,7 +61,21 @@ public class ImageComments implements Serializable {
         this.commentId = commentId;
     }
 
-    
+    public String getCommenterId() {
+        return commenterId;
+    }
+
+    public void setCommenterId(String commenterId) {
+        this.commenterId = commenterId;
+    }
+
+    public Album getAlbum() {
+        return album;
+    }
+
+    public void setAlbum(Album album) {
+        this.album = album;
+    }
 
     public String getCurrentProfilePicId() {
         return currentProfilePicId;
@@ -91,46 +101,12 @@ public class ImageComments implements Serializable {
         this.createdOn = date;
     }
 
-    public String getCommenterId() {
-        return commenterId;
-    }
-
-    public void setCommenterId(String commenterId) {
-        this.commenterId = commenterId;
-    }
-
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    
-
-    public String getAlbumId() {
-        return albumId;
-    }
-
-    public void setAlbumId(String albumId) {
-        this.albumId = albumId;
-    }
-
-    public Images getImages() {
-        return images;
-    }
-
-    public void setImages(Images images) {
-        this.images = images;
-    }
-
-    public String getImageId() {
-        return imageId;
-    }
-
-    public void setImageId(String imageId) {
-        this.imageId = imageId;
     }
 
     public UserInfo getUserInfo() {
@@ -140,7 +116,16 @@ public class ImageComments implements Serializable {
     public void setUserInfo(UserInfo userInfo) {
         this.userInfo = userInfo;
     }
+
+    public String getAlbumId() {
+        return albumId;
+    }
+
+    public void setAlbumId(String albumId) {
+        this.albumId = albumId;
+    }
     
-    
+   
+
     
 }

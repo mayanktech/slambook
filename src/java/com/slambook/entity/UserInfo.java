@@ -13,6 +13,7 @@ import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Transient;
 
 /**
@@ -66,6 +67,17 @@ public class UserInfo implements  Serializable {
     
     @Temporal(javax.persistence.TemporalType.TIMESTAMP)
     private Date lastSessionDestroyedTime;
+
+    public Date getCreatedOn() {
+        return createdOn;
+    }
+
+    public void setCreatedOn(Date createdOn) {
+        this.createdOn = createdOn;
+    }
+    
+     @Temporal(TemporalType.TIMESTAMP)
+    private Date createdOn;
 
     @OneToMany(mappedBy = "userInfo")
     private List <com.slambook.entity.Slambook> slambookList;

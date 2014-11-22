@@ -41,7 +41,7 @@ public class Slambook implements Serializable {
     @OneToMany(cascade = {CascadeType.ALL}, mappedBy = "slambook")
     private List<com.slambook.entity.Questions> slambookQuestions;
     
-    @OneToMany(mappedBy = "slambook")
+    @OneToMany(cascade = {CascadeType.ALL},mappedBy = "slambook")
     private List<com.slambook.entity.Friends> friendsList;
 
     public long getSlambookId() {

@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.slambook.repository.interfaces;
+package com.slambook.repository.longerfaces;
 
 import java.util.ArrayList;
 
@@ -12,13 +12,13 @@ import java.util.ArrayList;
  */
 public interface FriendDAOInt {
     
-    public ArrayList searchFriendsByName(String name,int currentUserId);
-    public ArrayList searchFriendsByEmail(String email);
-     public ArrayList getUserFriends(int userId);
-     public void acceptRequest(int userId,int friendId);
-     public void cancelRequest(int userId,int friendId);
-     public boolean isAlreadyAFriend(int friendId,int userId);
-     public int getNumberOfMutualFriends(int friendId);
-     public ArrayList getIdsOfUserFriends(int userId);
+     public ArrayList searchFriendsByName(String name,long currentUserId);
+     public ArrayList searchFriendsByEmail(String email);
+     public ArrayList getUserFriends(long userId);
+     public void acceptRequest(long userId,long friendId);
+     public void cancelRequest(long userId,long friendId);
+     public boolean isAlreadyAFriend(long friendId,long userId);
+     public long getNumberOfMutualFriends(long friendId);
+     public ArrayList getIdsOfUserFriends(long userId);
     
 }

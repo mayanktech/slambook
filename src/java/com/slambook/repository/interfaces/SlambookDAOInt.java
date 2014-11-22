@@ -8,6 +8,7 @@ package com.slambook.repository.interfaces;
 
 import com.slambook.entity.Slambook;
 import com.slambook.entity.UserInfo;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,7 +16,7 @@ import com.slambook.entity.UserInfo;
  */
 public interface SlambookDAOInt {
     
-    public long addSlambook(String slambookName,UserInfo userInfo);
+    public long addSlambook(String slambookName,UserInfo userInfo,ArrayList<com.slambook.entity.Questions> questionsList);
     public void deleteSlambook(Slambook slambook);
     
 }

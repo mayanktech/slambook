@@ -9,12 +9,19 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 /**
  *
  * @author Mayank
  */
 @Entity
+@NamedQueries({
+
+        @NamedQuery(name = "Answers.getAnswer",query = "FROM Answers answers where answers.questionId = :questionId AND answers.friendInfo.userId = :friendId ")
+
+})
 public class Answers implements Serializable {
     
     @Id
@@ -23,15 +30,13 @@ public class Answers implements Serializable {
     private String answer;
     
     private long questionId;
-   
     
+    private long slambookId;
+   
     @ManyToOne
     @JoinColumn(name = "friendId")
     private UserInfo friendInfo;
     
-    
-    
-   
     public long getAnswerId() {
         return answerId;
     }
@@ -63,6 +68,14 @@ public class Answers implements Serializable {
 
     public void setFriendInfo(UserInfo friendInfo) {
         this.friendInfo = friendInfo;
+    }
+
+    public long getSlambookId() {
+        return slambookId;
+    }
+
+    public void setSlambookId(long slambookId) {
+        this.slambookId = slambookId;
     }
   
     

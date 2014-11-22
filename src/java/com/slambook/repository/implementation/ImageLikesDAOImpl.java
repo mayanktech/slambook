@@ -19,7 +19,7 @@ import org.springframework.stereotype.Repository;
  * @author Mayank
  */
 @Repository
-public class ImageLikesDAOImplementation implements ImageLikeDAOInt {
+public class ImageLikesDAOImpl implements ImageLikeDAOInt {
 
     @Autowired
     private SessionFactory sessionFactory;

@@ -14,6 +14,6 @@ import com.slambook.entity.Answers;
  */
 public interface AnswerDAOInt {
     
-    public void addAnswer(long questionId,Answers answer);
-    public Answers getAnswer(long questionId);
+    public void addAnswer(Answers answer);
+    public Answers getAnswer(long questionId,long friendId);
 }

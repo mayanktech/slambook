@@ -50,7 +50,7 @@ public class UserInfoDAOImpl implements UserInfoDAOInt{
         long number = (long)(r.nextDouble()*range);
         userInfo.setVerificationKey(Long.toString(number));
         
-        slambookDAOInterface.addSlambook("My Slambook", userInfo);
+        slambookDAOInterface.addSlambook("My Slambook", userInfo,null);
         
          
         return userInfo.getUserId();

@@ -17,7 +17,7 @@ import org.springframework.stereotype.Repository;
  * @author Mayank
  */
 @Repository
-public class ImagesDAOImplementation implements ImageDAOInt {
+public class ImagesDAOImpl implements ImageDAOInt {
 
     
     @Autowired
