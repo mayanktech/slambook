@@ -13,10 +13,10 @@ import java.util.ArrayList;
  */
 public interface SlamBookAnswerServiceInt {
     
-   // public void addAnswers(SlamBookAnswers slamBookAnswers);
-    //public ArrayList userFriendsAnswers(long userId);
-    //public SlamBookAnswers previewFriendAnswers(long userId,long friendId);
-    //public SlamBookAnswers getSingleFriendsAnswers(long userId, long friendId);
-    
+//    public void addAnswers(SlamBookAnswers slamBookAnswers);
+//    public ArrayList userFriendsAnswers(int userId);
+//    public SlamBookAnswers previewFriendAnswers(int userId,int friendId);
+//    public SlamBookAnswers getSingleFriendsAnswers(int userId, int friendId);
+//    
     
 }

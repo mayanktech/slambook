@@ -12,6 +12,6 @@ import java.util.ArrayList;
  */
 public interface NotificationServiceInt {
     
-     public ArrayList getNotifications(long userId);
+     public ArrayList getNotifications(int userId);
     
 }

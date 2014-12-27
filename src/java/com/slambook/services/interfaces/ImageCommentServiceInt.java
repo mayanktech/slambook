@@ -13,8 +13,8 @@ import java.util.ArrayList;
  */
 public interface ImageCommentServiceInt {
     
-public ArrayList getImageComments(long imageId);
-public long addImageComments(ImageComments imageComments);
-public long getImageCommentsCount(long imageId) ;    
+public ArrayList getImageComments(int imageId);
+public int addImageComments(ImageComments imageComments);
+public int getImageCommentsCount(int imageId) ;    
 
 }

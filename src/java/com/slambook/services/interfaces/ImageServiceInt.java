@@ -12,11 +12,11 @@ import java.util.ArrayList;
  * @author Mayank
  */
 public interface ImageServiceInt {
-    public long addImage(Images image);
+    public int addImage(Images image);
      public void updateImage(Images image);
-      public long deleteAllImagesFromAlbum(long albumId);
-       public long deleteImage(long imageId);
-       public ArrayList getImages(long albumId,long userId,long clickTimes);
-       public long getImageAlbumId(long imageId);
-       public void deleteImages(long userId,long albumId,String imageIds[]);
+      public int deleteAllImagesFromAlbum(int albumId);
+       public int deleteImage(int imageId);
+       public ArrayList getImages(int albumId,int userId,int clickTimes);
+       public int getImageAlbumId(int imageId);
+       public void deleteImages(int userId,int albumId,String imageIds[]);
 }
