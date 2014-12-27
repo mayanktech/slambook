@@ -12,12 +12,12 @@ import java.util.ArrayList;
  * @author Mayank
  */
 public interface VideoServiceInt {
-    public ArrayList getVideos(int userId,int clickTimes);
-     public int addVideo(Videos video);
+    public ArrayList getVideos(long userId,int clickTimes);
+     public long addVideo(Videos video);
      public void updateVideo(Videos video);
-     public int deleteVideo(int videoId);
+     public long deleteVideo(long videoId);
      public String getYoutubeVideoId(String youtubeUrl);
-     public String getYoutubeVideoCode(int videoId);
-     public String getVideoDescription(int videoId);
+     public String getYoutubeVideoCode(long videoId);
+     public String getVideoDescription(long videoId);
      
 }

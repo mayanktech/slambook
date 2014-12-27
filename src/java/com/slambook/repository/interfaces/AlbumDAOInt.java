@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.slambook.repository.longerfaces;
+package com.slambook.repository.interfaces;
 
 import com.slambook.entity.Album;
 import java.util.ArrayList;

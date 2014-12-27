@@ -24,58 +24,75 @@ public class UserInfoServiceImpl implements UserInfoServiceInt {
 
     
     @Autowired
-    private UserInfoDAOInt userInfoDAOInterface;
+    private UserInfoDAOInt userInfoDAOInt;
 
-   // @Override
-    public UserInfo getUser(String userId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @Override
+    public UserInfo getUser(long userId) {
+        
+        return userInfoDAOInt.getUser(userId);
     }
 
-    //@Override
+    @Override
     public long addUser(UserInfo user) {
         
-        return userInfoDAOInterface.addUser(user);
+        long userId = userInfoDAOInt.addUser(user);
+        return userId;
     }
 
-   // @Override
+    @Override
     public String updateUser(UserInfo user) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+         return userInfoDAOInt.updateUser(user);
+         
     }
 
-   // @Override
+    @Override
     public void deleteUser(UserInfo user) {
+        
+         userInfoDAOInt.deleteUser(user);
+         
+    }
+
+    @Override
+    public String getUserEmailById(long userId) {
+        
+        return userInfoDAOInt.getUserEmailById(userId);
+        
+    }
+
+    @Override
+    public long getUserIdByEmail(String email) {
+        
+        return userInfoDAOInt.getUserIdByEmail(email); 
+        
+    }
+
+    @Override
+    public boolean isAFriend(long userId, long friendId) {
+        
+        return userInfoDAOInt.isAFriend(userId, friendId);
+        
+    }
+
+    @Override
+    public UserInfo getUserInfo(long userId) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    //@Override
-    public String getUserEmailById(String userId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    //@Override
-    public String getUserIdByEmail(String email) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    //@Override
-    public boolean isAFriend(String userId, String friendId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    //@Override
-    public UserInfo getUserInfo(String userId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    //@Override
+    @Override
     public boolean checkEmail(String email) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
+        return userInfoDAOInt.checkEmail(email);
+        
     }
 
-    //@Override
+    @Override
     public boolean loginAuthentication(String email, String password) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        return userInfoDAOInt.loginAuthentication(email, password);
+        
     }
-    
+
+   
    
 }

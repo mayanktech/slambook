@@ -12,12 +12,12 @@ import java.util.ArrayList;
  * @author Mayank
  */
 public interface AlbumServiceInt {
-     public int addAlbum(Album album);
+     public long addAlbum(Album album);
      public void updateAlbum(Album album);
-     public int getAlbumCoverImage(int albumId);
-     public int getAlbumImageCount(int albumId);
-     public void deleteAlbum(int albumId);
-     public ArrayList getAlbums(int userId,int clickTimes);
-     public ArrayList getAllAlbums(int userId);
-     public String getAlbumName(int albumId);
+     public long getAlbumCoverImage(long albumId);
+     public long getAlbumImageCount(long albumId);
+     public void deleteAlbum(long albumId);
+     public ArrayList getAlbums(long userId,int clickTimes);
+     public ArrayList getAllAlbums(long userId);
+     public String getAlbumName(long albumId);
 }
