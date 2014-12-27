@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public interface VideoCommentServiceInt {
   
     public void addVideoComments(VideoComments videoComments);
-    public ArrayList getVideoComments(int videoId);
-    public int getVideoCommentsCount(int videoId);
+    public ArrayList getVideoComments(long videoId);
+    public long getVideoCommentsCount(long videoId);
     
 }

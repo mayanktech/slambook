@@ -13,11 +13,11 @@ import java.util.ArrayList;
  */
 public interface ImageLikeServiceInt {
    
-     public int addLike(ImageLikes imageLikes);
-     public int removeLike(ImageLikes imageLikes);
-     public ArrayList getImageLikes(int imageId);
-     public int getImageLikesCount(int imageId);
-     public int returnImageLikesCount(int imageId);
-     public boolean isAlreadyLiked(int imageId,int userId);
+     public long addLike(ImageLikes imageLikes);
+     public long removeLike(ImageLikes imageLikes);
+     public ArrayList getImageLikes(long imageId);
+     public long getImageLikesCount(long imageId);
+     public long returnImageLikesCount(long imageId);
+     public boolean isAlreadyLiked(long imageId,long userId);
    
 }

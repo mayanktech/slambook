@@ -12,9 +12,9 @@ import java.util.ArrayList;
  * @author Mayank
  */
 public interface ProfilePicServiceInt {
-    public int addProfilePic(ProfilePic profilePic);
-    public ArrayList getProfilePics(int userId);
-    public int getCurrentProfilePic(int userId);
+    public long addProfilePic(ProfilePic profilePic);
+    public ArrayList getProfilePics(long userId);
+    public long getCurrentProfilePic(long userId);
    
     
 }

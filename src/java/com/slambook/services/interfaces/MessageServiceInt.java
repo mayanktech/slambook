@@ -13,10 +13,10 @@ import java.util.ArrayList;
  */
 public interface MessageServiceInt {
    
- //  public int sendMessage(Messages message);
-   public ArrayList getConversationMessagesFromFriend(int senderId,int receiverId,int clickTimes);
-   public ArrayList getTop10Messages(int receiverId);
-   public ArrayList getRealTimeMessages(int senderId,int userId,int messageId);
-   public int getRealTimeMessageId(int senderId,int userId,int messageId);
+ //  public long sendMessage(Messages message);
+   public ArrayList getConversationMessagesFromFriend(long senderId,long receiverId,int clickTimes);
+   public ArrayList getTop10Messages(long receiverId);
+   public ArrayList getRealTimeMessages(long senderId,long userId,long messageId);
+   public long getRealTimeMessageId(long senderId,long userId,long messageId);
     
 }

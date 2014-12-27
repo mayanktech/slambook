@@ -6,7 +6,7 @@
 package com.slambook.repository.implementation;
 
 import com.slambook.entity.Album;
-import com.slambook.repository.longerfaces.AlbumDAOInt;
+import com.slambook.repository.interfaces.AlbumDAOInt;
 import java.util.ArrayList;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;

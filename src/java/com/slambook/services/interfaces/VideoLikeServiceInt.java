@@ -13,10 +13,10 @@ import java.util.ArrayList;
  */
 public interface VideoLikeServiceInt {
    
-    public int addLike(VideoLikes videoLikes);
-    public int removeLike(VideoLikes videoLikes);
-    public ArrayList getVideoLikes(int videoId);
-    public int getVideoLikesCount(int videoId);
-    public int returnVideoLikesCount(int videoId);
-    public boolean isAlreadyLiked(int videoId,int userId);
+    public long addLike(VideoLikes videoLikes);
+    public long removeLike(VideoLikes videoLikes);
+    public ArrayList getVideoLikes(long videoId);
+    public long getVideoLikesCount(long videoId);
+    public long returnVideoLikesCount(long videoId);
+    public boolean isAlreadyLiked(long videoId,long userId);
 }
